@@ -1,5 +1,5 @@
-#!/bin/bash                                                                                            │~
-                                                                                                       │~
+#!/bin/bash
+
 set -euf -o pipefail
 
 lego_certs_path=/etc/lego/certificates
