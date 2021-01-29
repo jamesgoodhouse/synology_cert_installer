@@ -24,4 +24,6 @@ if [ "$(diff "$lego_certs_path/$DOMAIN.crt" "$syno_cert_path")" != "" ]; then
 
   echo "restarting web server"
   synoservice --restart nginx
+else
+  echo "no new certificate found"
 fi
