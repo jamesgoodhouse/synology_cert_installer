@@ -13,7 +13,7 @@ syno_key_path="$syno_certs_path/$CERT_IDENTIFIER/privkey.pem"
 syno_chain_path="$syno_certs_path/$CERT_IDENTIFIER/chain.pem"
 syno_fullchain_path="$syno_certs_path/$CERT_IDENTIFIER/fullchain.pem"
 
-if [ "$(diff "$lego_certs_path/$DOMAIN.crt" "$syno_cert_path")" != "" ]; then
+if [ "$(diff "$lego_cert_path" "$syno_cert_path")" != "" ]; then
   echo "new certificate found"
   cat "$lego_cert_path" "$lego_issuer_cert_path" > "$syno_fullchain_path"
   cp -f "$lego_cert_path" "$syno_cert_path"
