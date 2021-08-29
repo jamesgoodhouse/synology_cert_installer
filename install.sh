@@ -24,7 +24,7 @@ if [ "$(diff "$lego_cert_path" "$syno_cert_path")" != "" ]; then
 
   echo "restarting services"
   systemctl restart nginx
-  synoservice restart pkgctl-WebDAVServer
+  systemctl restart pkgctl-WebDAVServer
 else
   echo "no new certificate found"
 fi
