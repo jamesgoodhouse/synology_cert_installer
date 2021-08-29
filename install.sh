@@ -23,8 +23,8 @@ if [ "$(diff "$lego_cert_path" "$syno_cert_path")" != "" ]; then
   chmod -R 400 "$syno_certs_path/$CERT_IDENTIFIER/"
 
   echo "restarting services"
-  synoservice --restart nginx
-  synoservice --restart pkgctl-WebDAVServer
+  systemctl restart nginx
+  synoservice restart pkgctl-WebDAVServer
 else
   echo "no new certificate found"
 fi
